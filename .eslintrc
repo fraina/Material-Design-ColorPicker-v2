@@ -1,0 +1,30 @@
+---
+env:
+  node: true
+  browser: true
+  amd: true
+  mocha: true
+
+rules:
+  no-new: off
+  quotes: [2, single]
+  block-scoped-var: [2]
+  complexity: [1, 8]
+  consistent-return: [1]
+  curly: [2]
+  default-case: [1]
+  dot-notation: [1]
+  guard-for-in: [2]
+  no-eq-null: [2]
+  no-self-compare: [2]
+  no-void: [2]
+  brace-style: [2, 1tbs]
+  comma-style: [2, last]
+  max-nested-callbacks: [2, 3]
+  no-multiple-empty-lines: [2, {max: 2}]
+  no-nested-ternary: [2]
+  space-after-keywords: [1, always]
+  space-before-blocks: [1, always]
+  space-in-brackets: [2, never]
+  max-len: [1, 120, 2]
+  max-depth: [1, 4]

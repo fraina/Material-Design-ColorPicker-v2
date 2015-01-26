@@ -1,0 +1,48 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    title Welcome To Laima
+    link(href="css/application.css" rel="stylesheet" type="text/css")
+    link(rel="stylesheet" href="bower/outdated-browser/outdatedbrowser/outdatedbrowser.min.css")
+    meta(name="viewport" content="width=device-width,initial-scale=1")
+
+  body
+    #outdated
+    a(href="https://github.com/IEMustDie/Laima")
+      img(style="position: absolute; top: 0; right: 0; border: 0; z-index: 1499" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png")
+
+    .content.g
+      .content-wrapper.g-b--center.g-b--7of8.g-b--m--10of12
+       .content-introduce.g-b--1of1.g-b--m--1of2
+         h1 Welcome To Laima
+         p.mbl A suite of Front-End Tool to develop, showcase, and mock API, powered by gulp.
+         a.btn(href="https://github.com/IEMustDie/Laima") READ MORE
+         .bgChanger.mtl
+           ul.bgChanger-list
+             li(data-bg="http://fraina.github.io/Laima-welcome-page/img/bg_example01.jpg")
+             li(data-bg="http://fraina.github.io/Laima-welcome-page/img/bg_example02.jpg")
+             li(data-bg="http://fraina.github.io/Laima-welcome-page/img/bg_example03.jpg")
+         .qrcode
+
+       .content-phone.g-b--5of10
+         .content-phoneItself
+           .content-phoneCase
+           .content-phoneScreen
+              h2 Welcome To Laima
+              p A suite of Front-End Tool to develop, showcase, and mock API, powered by gulp.
+              a.btn(href="https://github.com/IEMustDie/Laima").btn--s READ MORE
+           .content-phoneScreenBg
+
+    script(data-main="js/main.js" src="bower/requirejs/require.js")
+    //- script(data-main="js/app.js" src="bower/requirejs/require.js")
+    script(src="bower/outdated-browser/outdatedbrowser/outdatedbrowser.min.js")
+
+    //- outdated browser
+    script.
+      outdatedBrowser({
+        bgColor: '#f25648',
+        color: '#ffffff',
+        lowerThan: 'transform',
+        languagePath: 'bower/outdated-browser/outdatedbrowser/lang/en.html'
+      })

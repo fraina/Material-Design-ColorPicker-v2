@@ -1,0 +1,74 @@
+{
+  "compass": {
+    "style": false,
+    "comments": true,
+    "relative": true,
+    "import_path": false,
+    "config_file": false,
+    "require": false,
+    "logging": true,
+    "load_all": false,
+    "bundle_exec": false,
+    "debug": false,
+    "time": false,
+    "sourcemap": false,
+    "boring": false
+  },
+  "rjs": {
+    "options": {
+      "name": "main",
+      "out": "app.js",
+      "paths": {
+        "jquery": "../bower/jquery/dist/jquery.min",
+        "underscore": "../bower/lodash/dist/lodash.underscore.min",
+        "backbone": "../bower/backbone/backbone",
+        "i18n": "../bower/requirejs-i18n/i18n",
+        "text": "../bower/requirejs-text/text",
+        "backstretch": "../bower/jquery-backstretch/jquery.backstretch.min"
+      }
+    }
+  },
+  "jade": {
+    "filename": "string",
+    "doctype": "string",
+    "pretty": false,
+    "self": false,
+    "debug": false,
+    "compileDebug": false,
+    "compiler": "class"
+  },
+  "marked": {
+    "gfm": true,
+    "tables": true,
+    "breaks": false,
+    "pedantic": false,
+    "sanitize": false,
+    "smartLists": true,
+    "smartypants": false
+  },
+  "remarkable": {
+    "remarkableOptions": {
+      "html": false,
+      "xhtmlOut": false,
+      "breaks": false,
+      "langPrefix": "language-",
+      "linkify": false,
+      "typographer": false
+    }
+  },
+  "docco": {
+    "layout": "parallel",
+    "output": "build/js/docco",
+    "template": null,
+    "css": null,
+    "extension": null,
+    "languages": {}
+  },
+  "deploy": {
+    "remoteUrl": "git@github.com:IEMustDie/Laima.git",
+    "origin": "origin",
+    "branch": "gh-pages",
+    "cacheDir": ".cache",
+    "push": true
+  }
+}

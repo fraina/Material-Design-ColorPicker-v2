@@ -1,0 +1,98 @@
+{
+  "name": "laima",
+  "version": "0.1.0",
+  "dependencies": {
+    "jquery": "1.11.2",
+    "backbone": "1.1.2",
+    "requirejs": "2.1.15",
+    "requirejs-text": "2.0.12",
+    "requirejs-i18n": "2.0.4",
+    "lodash": "~2.4.1",
+    "jquery-backstretch": "~2.0.4",
+    "outdated-browser": "~1.1.0"
+  },
+  "ignore": [
+    "test"
+  ],
+  "devDependencies": {
+    "mockjs": "~0.1.6",
+    "mocha": "~2.1.0",
+    "chai": "~1.10.0"
+  },
+  "resolutions": {
+    "jquery": "1.11.2"
+  },
+  "overrides": {
+    "jquery": {
+      "ignore": [
+        "*.json",
+        "*.txt",
+        "src/**"
+      ]
+    },
+    "backbone": {
+      "ignore": [
+        "*.md",
+        "*.html",
+        "CNAME",
+        "LICENSE",
+        ".*",
+        "*.json",
+        "index.js"
+      ]
+    },
+    "lodash": {
+      "ignore": [
+        "*.json",
+        "*.txt"
+      ]
+    },
+    "requirejs": {
+      "ignore": [
+        "*.json",
+        "*.md"
+      ]
+    },
+    "requirejs-i18n": {
+      "ignore": [
+        "*.json",
+        "*.md",
+        "LICENSE"
+      ]
+    },
+    "requirejs-text": {
+      "ignore": [
+        "*.json",
+        "*.md",
+        "LICENSE"
+      ]
+    },
+    "underscore": {
+      "ignore": [
+        "*.json",
+        "*.md",
+        "LICENSE"
+      ]
+    },
+    "jquery-backstretch": {
+      "ignore": [
+        "examples/**",
+        "libs/**",
+        "src/**",
+        "test/**",
+        "*.json",
+        "grunt.js",
+        "LICENSE*",
+        "*.md"
+      ]
+    },
+    "outdated-browser": {
+      "ignore": [
+        "demo/**",
+        "*.json",
+        "*.md",
+        "LICENSE"
+      ]
+    }
+  }
+}
