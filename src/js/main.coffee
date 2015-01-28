@@ -7,6 +7,9 @@ requirejs.config
     i18n: "../bower/requirejs-i18n/i18n"
     text: "../bower/requirejs-text/text"
     mock: "../bower/mockjs/dist/mock"
+    react: "../bower/react/react-with-addons"
+    JSXTransformer: "../bower/react/JSXTransformer"
+    jsx: "../bower/jsx-requirejs-plugin/js/jsx"
 
   shim:
     underscore:
@@ -22,13 +25,17 @@ requirejs.config
     backstretch:
       deps: ["jquery"]
 
+  jsx:
+    fileExtension: '.jsx'
+
 require [
   "jquery"
   "underscore"
   "backbone"
   "views/palette"
   "views/picker"
-], ($, _, Backbone, Palette, Picker) ->
+  "jsx!views/react"
+], ($, _, Backbone, Palette, Picker, ReactTest) ->
   "use strict"
 
   new Palette()

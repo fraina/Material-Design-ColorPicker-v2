@@ -9,7 +9,9 @@
     "requirejs-i18n": "2.0.4",
     "lodash": "~2.4.1",
     "jquery-backstretch": "~2.0.4",
-    "outdated-browser": "~1.1.0"
+    "outdated-browser": "~1.1.0",
+    "react": "~0.12.2",
+    "jsx-requirejs-plugin": "~0.5.2"
   },
   "ignore": [
     "test"
