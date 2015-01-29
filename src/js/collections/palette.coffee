@@ -11,6 +11,6 @@ define [
     url: 'js/data.json'
 
     initialize: ->
-      console.log('collection')
+      console.log('[collection] Palette')
 
   return Palette

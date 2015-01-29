@@ -21,21 +21,20 @@
     },
 
     hoverHandler: function(e) {
-      var isShow = !this.state.isShow;
-      this.setState({ isShow: isShow });
+      var show = !this.state.isShow;
+      this.setState({ isShow: show });
     },
 
     render: function() {
       var show = this.state.isShow,
-          paletteColor = this.props.model.color[5].hex;
+          paletteColor = this.props.model.color[5].hex,
+          pickerCollect = this.props.pickerCollect;
       return (
-        <div
-          className='palette-tones'
-          onMouseEnter={this.hoverHandler}
-          onMouseLeave={this.hoverHandler}
-        >
+        <div className='palette-tones'
+             onMouseEnter={this.hoverHandler}
+             onMouseLeave={this.hoverHandler}>
           {this.props.model.color.map(function(tone) {
-            return <Tones list={tone} status={show} paletteColor={paletteColor}/>
+            return <Tones list={tone} status={show} paletteColor={paletteColor} pickerCollect={pickerCollect}/>
           })}
         </div>
       )

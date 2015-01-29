@@ -2,15 +2,24 @@
   'use strict';
 
   define([
-    'react'
+    'react',
+    'BRMixin'
   ], factory);
 
 })(function(
-  React
+  React,
+  BRMixin
 ) {
   'use strict';
 
   var Tone = React.createClass({
+    mixins: [BRMixin],
+
+    clickHandler: function(e) {
+      this.props.pickerCollect.add({'tempV': '1'})
+      console.log(this.props.pickerCollect)
+    },
+
     render: function() {
       var currentColor;
       if (this.props.status) {
@@ -18,7 +27,7 @@
       } else {
         currentColor = {background: '#' + this.props.paletteColor}
       }
-      return <a className='palette-tone' style={currentColor}></a>
+      return <a className='palette-tone' style={currentColor} onClick={this.clickHandler}></a>
     }
   });
 

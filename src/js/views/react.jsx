@@ -6,6 +6,7 @@
     'react',
     'BRMixin',
     'collections/palette',
+    'collections/picker',
     'jsx!views/palette'
   ], factory);
 
@@ -13,7 +14,8 @@
   Backbone,
   React,
   BRMixin,
-  Collection,
+  CollectionPalette,
+  CollectionPicker,
   Palette
 ) {
   'use strict';
@@ -21,12 +23,13 @@
   var HelloMessage = React.createClass({
     mixins: [BRMixin],
     render: function() {
+      var pickerCollect = this.props.pickerCollect;
       return (
         <ul id='palette'>
           {this.props.collection.map(function(model) {
             return (
               <li className='palette-list'>
-                <Palette model={model} isShow={true}/>
+                <Palette model={model} isShow={true} pickerCollect={pickerCollect}/>
               </li>
             )
           })}
@@ -35,9 +38,10 @@
     }
   });
 
-  var collection = new Collection();
-  collection.fetch()
+  var collectionPalette = new CollectionPalette();
+  var collectionPicker = new CollectionPicker();
+  collectionPalette.fetch()
 
-  React.render(<HelloMessage collection={collection} />, document.getElementById('wrapper'));
+  React.render(<HelloMessage collection={collectionPalette} pickerCollect={collectionPicker}/>, document.getElementById('wrapper'));
 
 })
