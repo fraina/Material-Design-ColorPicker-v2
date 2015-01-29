@@ -13,18 +13,12 @@
   var Tone = React.createClass({
     render: function() {
       var currentColor = {
-        background: '#' + this.props.data.hex
+        background: '#' + this.props.list.hex
       }
-      return <a className='palette-tone' style={currentColor}>{this.props.data.hex}</a>
+      return <a className='palette-tone' style={currentColor}>{this.props.list.hex}</a>
     }
   });
 
-  var Tones = React.createClass({
-    render: function() {
-      return <Tone data={this.props.list}/>;
-    }
-  });
-
-  return Tones;
+  return Tone;
 
 })

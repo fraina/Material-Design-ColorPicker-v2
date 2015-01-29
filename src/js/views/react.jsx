@@ -6,7 +6,7 @@
     'react',
     'BRMixin',
     'collections/palette',
-    'jsx!views/tones'
+    'jsx!views/palette'
   ], factory);
 
 })(function(
@@ -14,7 +14,7 @@
   React,
   BRMixin,
   Collection,
-  Tones
+  Palette
 ) {
   'use strict';
 
@@ -26,11 +26,7 @@
           {this.props.collection.map(function(model) {
             return (
               <li className='palette-list'>
-                <div className='palette-tones'>
-                  {model.color.map(function(tone) {
-                    return <Tones list={tone}/>
-                  })}
-                </div>
+                <Palette colors={model.color}/>
               </li>
             )
           })}
