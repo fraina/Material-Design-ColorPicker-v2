@@ -2,25 +2,28 @@
   'use strict';
 
   define([
-    'react'
+    'backbone',
+    'react',
+    'BRMixin'
   ], factory);
 
 })(function(
-  React
+  Backbone,
+  React,
+  BRMixin
 ) {
   'use strict';
 
   var HelloMessage = React.createClass({
+    mixins: [BRMixin],
     render: function() {
-      return (<div>Hello {this.props.name}</div>);
+      return (<div>{this.props.foo}</div>);
     }
   });
 
-  React.render(
-    <HelloMessage />,
-    document.getElementById('test')
-  );
-
-  return this
+  var model = new Backbone.Model({foo: 'bar'});
+  React.render(<HelloMessage model={model} />, document.getElementById('test'));
+  // Update the UI
+  model.set('foo', 'Hello world!');
 
 })

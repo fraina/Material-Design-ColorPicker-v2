@@ -10,6 +10,7 @@ requirejs.config
     react: "../bower/react/react-with-addons"
     JSXTransformer: "../bower/react/JSXTransformer"
     jsx: "../bower/jsx-requirejs-plugin/js/jsx"
+    BRMixin: "../bower/backbone-react-component/lib/component"
 
   shim:
     underscore:

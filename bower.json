@@ -11,7 +11,8 @@
     "jquery-backstretch": "~2.0.4",
     "outdated-browser": "~1.1.0",
     "react": "~0.12.2",
-    "jsx-requirejs-plugin": "~0.5.2"
+    "jsx-requirejs-plugin": "~0.5.2",
+    "backbone-react-component": "~0.7.3"
   },
   "ignore": [
     "test"
