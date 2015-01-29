@@ -16,9 +16,9 @@
       if (this.props.status) {
         currentColor = {background: '#' + this.props.list.hex}
       } else {
-        currentColor = {background: '#000'}
+        currentColor = {background: '#' + this.props.paletteColor}
       }
-      return <a className='palette-tone' style={currentColor}>{this.props.list.hex}</a>
+      return <a className='palette-tone' style={currentColor}></a>
     }
   });
 

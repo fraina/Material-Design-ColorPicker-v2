@@ -16,22 +16,26 @@
 
     getInitialState: function() {
       return {
-        isShow: true
+        isShow: false
       };
     },
 
-    clickHandler: function(e) {
-      console.log(this.props.model.paletteName)
-      this.props.isShow = !this.props.isShow;
-      this.setState({ isShow: false });
+    hoverHandler: function(e) {
+      var isShow = !this.state.isShow;
+      this.setState({ isShow: isShow });
     },
 
     render: function() {
-      var show = this.props.isShow;
+      var show = this.state.isShow,
+          paletteColor = this.props.model.color[5].hex;
       return (
-        <div className='palette-tones' onClick={this.clickHandler}>
+        <div
+          className='palette-tones'
+          onMouseEnter={this.hoverHandler}
+          onMouseLeave={this.hoverHandler}
+        >
           {this.props.model.color.map(function(tone) {
-            return <Tones list={tone} status={show}/>
+            return <Tones list={tone} status={show} paletteColor={paletteColor}/>
           })}
         </div>
       )
