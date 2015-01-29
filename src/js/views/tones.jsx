@@ -12,8 +12,11 @@
 
   var Tone = React.createClass({
     render: function() {
-      var currentColor = {
-        background: '#' + this.props.list.hex
+      var currentColor;
+      if (this.props.status) {
+        currentColor = {background: '#' + this.props.list.hex}
+      } else {
+        currentColor = {background: '#000'}
       }
       return <a className='palette-tone' style={currentColor}>{this.props.list.hex}</a>
     }

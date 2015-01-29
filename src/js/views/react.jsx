@@ -26,7 +26,7 @@
           {this.props.collection.map(function(model) {
             return (
               <li className='palette-list'>
-                <Palette colors={model.color}/>
+                <Palette model={model} isShow={true}/>
               </li>
             )
           })}
