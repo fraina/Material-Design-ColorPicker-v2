@@ -33,14 +33,9 @@ require [
   "jquery"
   "underscore"
   "backbone"
-  "views/palette"
-  "views/picker"
   "jsx!views/react"
-], ($, _, Backbone, Palette, Picker, ReactTest) ->
+], ($, _, Backbone, React) ->
   "use strict"
-
-  new Palette()
-  new Picker()
 
   Backbone.history.start()
 

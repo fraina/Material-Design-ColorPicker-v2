@@ -4,26 +4,44 @@
   define([
     'backbone',
     'react',
-    'BRMixin'
+    'BRMixin',
+    'collections/palette',
+    'jsx!views/tones'
   ], factory);
 
 })(function(
   Backbone,
   React,
-  BRMixin
+  BRMixin,
+  Collection,
+  Tones
 ) {
   'use strict';
 
   var HelloMessage = React.createClass({
     mixins: [BRMixin],
     render: function() {
-      return (<div>{this.props.foo}</div>);
+      return (
+        <ul id='palette'>
+          {this.props.collection.map(function(model) {
+            return (
+              <li className='palette-list'>
+                <div className='palette-tones'>
+                  {model.color.map(function(tone) {
+                    return <Tones list={tone}/>
+                  })}
+                </div>
+              </li>
+            )
+          })}
+        </ul>
+      );
     }
   });
 
-  var model = new Backbone.Model({foo: 'bar'});
-  React.render(<HelloMessage model={model} />, document.getElementById('test'));
-  // Update the UI
-  model.set('foo', 'Hello world!');
+  var collection = new Collection();
+  collection.fetch()
+
+  React.render(<HelloMessage collection={collection} />, document.getElementById('wrapper'));
 
 })
