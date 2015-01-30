@@ -3,15 +3,48 @@
 
   define([
     'react',
-    'jsx!views/tones'
+    'BRMixin'
   ], factory);
 
 })(function(
   React,
-  Tones
+  BRMixin
 ) {
   'use strict';
 
+  // #### 子元件：色卡 ####
+  var Tone = React.createClass({
+
+    mixins: [BRMixin],
+
+    clickHandler: function(e) {
+      var props = this.props,
+          collection = props.pickedCollect,
+          palette = props.model.paletteName,
+          tone = props.list;
+
+      props.pickedCollect.add({
+        'id': tone.hex,
+        'paletteName': palette,
+        'tone': tone.tone
+      })
+    },
+
+    render: function() {
+      var props = this.props,
+          currentColor;
+
+      if (props.status) {
+        currentColor = {background: '#' + props.list.hex}
+      } else {
+        currentColor = {background: '#' + props.paletteColor}
+      }
+      return <a className='palette-tone' style={currentColor} onClick={this.clickHandler}></a>
+    }
+  });
+
+
+  // #### 色調 ####
   var Palette = React.createClass({
 
     getInitialState: function() {
@@ -26,15 +59,17 @@
     },
 
     render: function() {
-      var show = this.state.isShow,
-          paletteColor = this.props.model.color[5].hex,
-          pickerCollect = this.props.pickerCollect;
+      var props = this.props,
+          show = this.state.isShow,
+          model = props.model,
+          paletteColor = props.model.color[5].hex,
+          pickedCollect = props.pickedCollect;
       return (
         <div className='palette-tones'
              onMouseEnter={this.hoverHandler}
              onMouseLeave={this.hoverHandler}>
-          {this.props.model.color.map(function(tone) {
-            return <Tones list={tone} status={show} paletteColor={paletteColor} pickerCollect={pickerCollect}/>
+          {props.model.color.map(function(tone) {
+            return <Tone model={model} list={tone} status={show} paletteColor={paletteColor} pickedCollect={pickedCollect}/>
           })}
         </div>
       )

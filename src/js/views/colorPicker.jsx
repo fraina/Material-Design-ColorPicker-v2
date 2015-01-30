@@ -21,18 +21,24 @@
   'use strict';
 
   var HelloMessage = React.createClass({
+
     mixins: [BRMixin],
+
     render: function() {
-      var pickerCollect = this.props.pickerCollect;
+      var props = this.props,
+          pickedCollect = this.props.pickedCollect;
       return (
         <ul id='palette'>
-          {this.props.collection.map(function(model) {
+          {props.collection.map(function(model) {
             return (
               <li className='palette-list'>
-                <Palette model={model} isShow={true} pickerCollect={pickerCollect}/>
+                <Palette model={model} isShow={true} pickedCollect={pickedCollect}/>
               </li>
             )
           })}
+          <li className='picker'>
+
+          </li>
         </ul>
       );
     }
@@ -42,6 +48,6 @@
   var collectionPicker = new CollectionPicker();
   collectionPalette.fetch()
 
-  React.render(<HelloMessage collection={collectionPalette} pickerCollect={collectionPicker}/>, document.getElementById('wrapper'));
+  React.render(<HelloMessage collection={collectionPalette} pickedCollect={collectionPicker}/>, document.getElementById('wrapper'));
 
 })

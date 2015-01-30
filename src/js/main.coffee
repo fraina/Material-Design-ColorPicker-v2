@@ -33,8 +33,8 @@ require [
   "jquery"
   "underscore"
   "backbone"
-  "jsx!views/react"
-], ($, _, Backbone, React) ->
+  "jsx!views/colorPicker"
+], ($, _, Backbone, colorPicker) ->
   "use strict"
 
   Backbone.history.start()
