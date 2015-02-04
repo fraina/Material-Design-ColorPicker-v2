@@ -21,8 +21,28 @@
   var Picker = React.createClass({
     mixins: [BRMixin],
 
+    getInitialState: function() {
+      return {
+        tmp: []
+      };
+    },
+
+    componentDidMount: function() {
+      var props = this.props,
+          pickedCollect = props.pickedCollect,
+          tmp = [];
+      this.props.pickedCollect.on('add', function() {
+        for (var i = 0; i < pickedCollect.length; i++){
+          tmp[i] = pickedCollect.models[i].get('id');
+        }
+        this.setState({ tmp: tmp })
+      }.bind(this));
+    },
+
     render: function() {
-      return <a>picker</a>
+      return (
+        <a>{this.state.tmp}</a>
+      )
     }
   });
 

@@ -39,7 +39,7 @@
             )
           })}
           <li className='picker'>
-            <Picker />
+            <Picker pickedCollect={pickedCollect}/>
           </li>
         </ul>
       );
