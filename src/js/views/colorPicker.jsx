@@ -7,7 +7,8 @@
     'BRMixin',
     'collections/palette',
     'collections/picker',
-    'jsx!views/palette'
+    'jsx!views/palette',
+    'jsx!views/picker'
   ], factory);
 
 })(function(
@@ -16,7 +17,8 @@
   BRMixin,
   CollectionPalette,
   CollectionPicker,
-  Palette
+  Palette,
+  Picker
 ) {
   'use strict';
 
@@ -37,7 +39,7 @@
             )
           })}
           <li className='picker'>
-
+            <Picker />
           </li>
         </ul>
       );
