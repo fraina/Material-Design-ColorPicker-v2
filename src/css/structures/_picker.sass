@@ -1,0 +1,96 @@
+// *************************************
+//
+//   Structure - Palette
+//
+// -------------------------------------
+//   Template (Jade)
+// -------------------------------------
+//
+// .picker[.is-active]
+//   .picker-colors
+//     .picker-color
+//      .picker-colorHex
+//
+// *************************************
+
+.picker
+  position: relative
+  display: flex
+  background-color: #424242
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+@import "compass/css3/border-radius"
+
+.picker-colors
+  width: 100%
+  padding: 0 220px 2px 0
+
+.picker-color
+  +border-radius(3px)
+  height: 22px
+  width: 22px
+  border: 1px white solid
+  display: inline-block
+  margin: 6px 3px
+  position: relative
+
+.picker-colorHex
+  display: none
+
+// -------------------------------------
+//   Status
+// -------------------------------------
+
+.picker.is-active
+  .picker-colors
+    padding-right: 120px
+
+  .picker-color
+    position: relative
+    height: 60px
+    width: 60px
+    border: 2px white solid
+
+  .picker-colorHex
+    position: absolute
+    bottom: 0
+    display: block
+    width: 100%
+    text-align: center
+    line-height: 1
+    font-size: $b-fontSize-m
+    background-color: white
+    padding: 3px 0 0
+
+  .ghbtns
+    width: 120px
+
+
+// *************************************
+//
+// github btns
+//
+// -------------------------------------
+//   Template (Haml)
+// -------------------------------------
+//
+// ul.ghbtns
+//   li iframe(detail: https://ghbtns.com/)
+//
+// *************************************
+
+.ghbtns
+  position: absolute
+  right: 0
+  width: 220px
+  float: right
+  padding-top: 6px
+
+  li
+    display: inline-block
+
+  iframe
+    border : 0
