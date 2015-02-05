@@ -1,3 +1,3 @@
 module.exports = (gulp, $, config)->
   gulp.task 'build', ->
-    $.runSequence 'clean', 'src', ['image', 'remarkable', 'jade', 'compass', 'js', 'coffee', 'bower:build'], ['rjs', 'htmlmin'], 'rev'
+    $.runSequence 'clean', 'src', ['remarkable', 'jade', 'compass', 'coffee', 'bower:build'], ['rjs', 'htmlmin'], 'rev'

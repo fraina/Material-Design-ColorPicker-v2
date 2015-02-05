@@ -27,7 +27,6 @@
     "gulp-filter": "^2.0.0",
     "gulp-gh-pages": "^0.4.0",
     "gulp-htmlmin": "^1.0.0",
-    "gulp-image": "^0.5.3",
     "gulp-jade": "^0.9.0",
     "gulp-load-plugins": "^0.8.0",
     "gulp-marked": "^1.0.0",
