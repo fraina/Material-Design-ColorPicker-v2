@@ -9,6 +9,4 @@ define [
     defaults:
       "picked": false
 
-      Backbone.Model.prototype.set.apply(this, arguments)
-
   return Palette

@@ -11,11 +11,15 @@
       "out": "app.js",
       "paths": {
         "jquery": "../bower/jquery/dist/jquery.min",
-        "underscore": "../bower/lodash/dist/lodash.underscore.min",
+        "underscore": "../bower/lodash/lodash.min",
         "backbone": "../bower/backbone/backbone",
         "i18n": "../bower/requirejs-i18n/i18n",
         "text": "../bower/requirejs-text/text",
-        "backstretch": "../bower/jquery-backstretch/jquery.backstretch.min"
+        "backstretch": "../bower/jquery-backstretch/jquery.backstretch.min",
+        "react": "../bower/react/react-with-addons",
+        "JSXTransformer": "../bower/react/JSXTransformer",
+        "jsx": "../bower/jsx-requirejs-plugin/js/jsx",
+        "BRMixin": "../bower/backbone-react-component/lib/component"
       }
     }
   },
