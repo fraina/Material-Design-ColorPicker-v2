@@ -1,3 +1,5 @@
+@import "compass/css3/border-radius"
+
 #wrapper
   height: 100%
 
@@ -42,13 +44,27 @@
   flex: auto
 
 .palette-tone
+  position: relative
   width: 100%
+
+.palette-dot
+  +border-radius(2px)
+  display: none
+  position: absolute
+  bottom: 0
+  text-indent: -9999px
+  line-height: 0
+  height: 2px
+  width: 100%
+  background-color: rgba(MDcolor(grey, 50), .2)
 
 // -------------------------------------
 //   States
 // -------------------------------------
 
-// .structure.is-state
+.palette-tone.is-selected
+  .palette-dot
+    display: block
 
 // -------------------------------------
 //   Context

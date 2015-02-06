@@ -42,7 +42,7 @@
       var props = this.props,
           pickedCollect = props.pickedCollect,
           colors = [];
-      pickedCollect.on('add remove reset', function() {
+      pickedCollect.on('add remove reset change', function() {
         colors.length = 0;
         for (var i = 0; i < pickedCollect.length; i++){
           colors[i] = pickedCollect.models[i].get('hex');

@@ -14,20 +14,24 @@
 
   // #### 子元件：色卡 ####
   var Tone = React.createClass({
-
-    clickHandler: function() {
+    clickHandler: function(e) {
       var props = this.props,
+          model = props.model,
           collection = props.pickedCollect,
-          palette = props.model.paletteName,
+          palette = model.paletteName,
           tone = props.list,
-          $locker = $('.flaticon-locker');
+          $locker = $('.flaticon-locker'),
+          $target = $(e.target);
 
+      var that = this;
       function pickedCollectAdd() {
         props.pickedCollect.add({
           'hex': tone.hex,
           'paletteName': palette,
           'tone': tone.tone
         })
+        model.picked = true;
+        $target.addClass('is-selected')
       }
 
       if (! $locker.hasClass('is-locked')){
@@ -48,7 +52,11 @@
       } else {
         currentColor = {background: '#' + props.paletteColor}
       }
-      return <a className='palette-tone' style={currentColor} onClick={this.clickHandler}></a>
+      return (
+        <a className='palette-tone' style={currentColor} onClick={this.clickHandler}>
+          <span className='palette-dot'>Selected!</span>
+        </a>
+      )
     }
   });
 

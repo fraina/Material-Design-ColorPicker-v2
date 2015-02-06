@@ -6,8 +6,9 @@ define [
 
   Palette = Backbone.Model.extend
 
-    initialize: ->
-      console.log(@attributes)
+    defaults:
+      "picked": false
 
+      Backbone.Model.prototype.set.apply(this, arguments)
 
   return Palette

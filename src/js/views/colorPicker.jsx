@@ -56,7 +56,7 @@
 
   var collectionPalette = new CollectionPalette();
   var collectionPicker = new CollectionPicker();
-  collectionPalette.fetch()
+  collectionPalette.fetch();
 
   React.render(<HelloMessage collection={collectionPalette} pickedCollect={collectionPicker}/>, document.getElementById('wrapper'));
 
