@@ -50,7 +50,7 @@
       if (props.status) {
         currentColor = {background: '#' + props.list.hex}
       } else {
-        currentColor = {background: '#' + props.paletteColor}
+        currentColor = {background: '#' + props.paletteColor, 'padding-top': '100%'}
       }
       return (
         <a className='palette-tone' style={currentColor} onClick={this.clickHandler}>

@@ -20,11 +20,17 @@
       }
     },
 
+    dbClickHandler: function(e) {
+      if (e.altKey) {
+        console.log('in');
+      }
+    },
+
     render: function() {
       var currentHex = this.props.model.get('hex'),
           currentColor = {background: '#' + currentHex};
       return (
-        <span className="picker-color" style={currentColor} onClick={this.clickHandler}>
+        <span className="picker-color" style={currentColor} onClick={this.clickHandler} onDoubleClick={this.dbClickHandler}>
           <span className="picker-colorHex">{currentHex}</span>
         </span>
       )
