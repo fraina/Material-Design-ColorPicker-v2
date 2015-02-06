@@ -8,7 +8,8 @@
     'collections/palette',
     'collections/picker',
     'jsx!views/palette',
-    'jsx!views/picker'
+    'jsx!views/picker',
+    'jsx!views/toolbar'
   ], factory);
 
 })(function(
@@ -18,7 +19,8 @@
   CollectionPalette,
   CollectionPicker,
   Palette,
-  Picker
+  Picker,
+  ToolBar
 ) {
   'use strict';
 
@@ -44,11 +46,8 @@
             )
           })}
           <li className='picker' onClick={this.clickHandler}>
+            <ToolBar />
             <Picker pickedCollect={pickedCollect}/>
-            <ul className="ghbtns">
-              <li><iframe src="http://ghbtns.com/github-btn.html?user=Fraina&repo=Material-Design-ColorPicker&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe></li>
-              <li><iframe src="http://ghbtns.com/github-btn.html?user=Fraina&repo=Material-Design-ColorPicker&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe></li>
-            </ul>
           </li>
         </ul>
       );

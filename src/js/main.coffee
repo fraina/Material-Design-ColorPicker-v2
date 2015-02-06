@@ -2,7 +2,7 @@
 requirejs.config
   paths:
     jquery: "../bower/jquery/dist/jquery.min"
-    underscore: "../bower/lodash/dist/lodash.underscore.min"
+    underscore: "../bower/lodash/lodash.min"
     backbone: "../bower/backbone/backbone"
     i18n: "../bower/requirejs-i18n/i18n"
     text: "../bower/requirejs-text/text"
