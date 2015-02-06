@@ -2,32 +2,41 @@
   'use strict';
 
   define([
-    'react',
-    'BRMixin'
+    'jquery',
+    'react'
   ], factory);
 
 })(function(
-  React,
-  BRMixin
+  $,
+  React
 ) {
   'use strict';
 
   // #### 子元件：色卡 ####
   var Tone = React.createClass({
 
-    mixins: [BRMixin],
-
-    clickHandler: function(e) {
+    clickHandler: function() {
       var props = this.props,
           collection = props.pickedCollect,
           palette = props.model.paletteName,
-          tone = props.list;
+          tone = props.list,
+          $locker = $('.flaticon-locker');
 
-      props.pickedCollect.add({
-        'id': tone.hex,
-        'paletteName': palette,
-        'tone': tone.tone
-      })
+      function pickedCollectAdd() {
+        props.pickedCollect.add({
+          'hex': tone.hex,
+          'paletteName': palette,
+          'tone': tone.tone
+        })
+      }
+
+      if (! $locker.hasClass('is-locked')){
+        pickedCollectAdd()
+      } else {
+        if (! props.pickedCollect.findWhere({hex: tone.hex})) {
+          pickedCollectAdd()
+        }
+      }
     },
 
     render: function() {

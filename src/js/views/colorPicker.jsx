@@ -46,7 +46,7 @@
             )
           })}
           <li className='picker' onClick={this.clickHandler}>
-            <ToolBar />
+            <ToolBar pickedCollect={pickedCollect}/>
             <Picker pickedCollect={pickedCollect}/>
           </li>
         </ul>

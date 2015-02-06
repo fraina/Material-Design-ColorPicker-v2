@@ -3,24 +3,16 @@
 
   define([
     'jquery',
-    'react',
-    'BRMixin'
+    'react'
   ], factory);
 
 })(function(
   $,
-  React,
-  BRMixin
+  React
 ) {
   'use strict';
 
   var PickedColor = React.createClass({
-    getInitialState: function() {
-      return {
-        model: this.props.model
-      };
-    },
-
     clickHandler: function() {
       var $picker = $('.picker');
       if ($picker.hasClass('is-active')) {
@@ -29,7 +21,7 @@
     },
 
     render: function() {
-      var currentHex = this.state.model.id,
+      var currentHex = this.props.model.get('hex'),
           currentColor = {background: '#' + currentHex};
       return (
         <span className="picker-color" style={currentColor} onClick={this.clickHandler}>
@@ -50,12 +42,12 @@
       var props = this.props,
           pickedCollect = props.pickedCollect,
           colors = [];
-      this.props.pickedCollect.on('add', function() {
+      pickedCollect.on('add remove reset', function() {
+        colors.length = 0;
         for (var i = 0; i < pickedCollect.length; i++){
-          colors[i] = pickedCollect.models[i].get('id');
+          colors[i] = pickedCollect.models[i].get('hex');
         }
         this.setState({ colorList: colors })
-        console.log(this.getDOMNode());
       }.bind(this));
     },
 
@@ -65,7 +57,7 @@
       return (
         <div className="picker-colors">
           {this.state.colorList.map(function(color) {
-            var currentModel = pickedCollect.findWhere({id : color});
+            var currentModel = pickedCollect.findWhere({hex: color});
             return (
               <PickedColor model={currentModel} />
             )
