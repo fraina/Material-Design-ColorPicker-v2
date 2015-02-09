@@ -20,10 +20,9 @@
           collection = props.pickedCollect,
           palette = model.paletteName,
           tone = props.list,
-          $locker = $('.flaticon-locker'),
+          $filter = $('.flaticon-filter'),
           $target = $(e.target);
 
-      var that = this;
       function pickedCollectAdd() {
         props.pickedCollect.add({
           'hex': tone.hex,
@@ -34,7 +33,7 @@
         $target.addClass('is-selected')
       }
 
-      if (! $locker.hasClass('is-locked')){
+      if (! $filter.hasClass('is-filtering')){
         pickedCollectAdd()
       } else {
         if (! props.pickedCollect.findWhere({hex: tone.hex})) {

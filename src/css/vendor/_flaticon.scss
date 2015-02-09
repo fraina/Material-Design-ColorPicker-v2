@@ -13,17 +13,17 @@
 	font-family: Flaticon;
         font-size: 20px;
 font-style: normal;
-}.flaticon-locker:before {
+}.flaticon-filter:before {
 	content: "\e000";
 }
-.flaticon-note:before {
+.flaticon-list:before {
 	content: "\e001";
-}
-.flaticon-trash:before {
-	content: "\e003";
 }
 .flaticon-trashAll:before {
 	margin: 0;
 	font-size: 100%;
 	content: "\e002";
+}
+.flaticon-trash:before {
+	content: "\e003";
 }
