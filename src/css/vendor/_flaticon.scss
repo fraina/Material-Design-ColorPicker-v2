@@ -13,7 +13,6 @@
 	font-family: Flaticon;
         font-size: 20px;
 font-style: normal;
-margin-left: 20px;
 }.flaticon-locker:before {
 	content: "\e000";
 }
@@ -21,5 +20,10 @@ margin-left: 20px;
 	content: "\e001";
 }
 .flaticon-trash:before {
+	content: "\e003";
+}
+.flaticon-trashAll:before {
+	margin: 0;
+	font-size: 100%;
 	content: "\e002";
 }

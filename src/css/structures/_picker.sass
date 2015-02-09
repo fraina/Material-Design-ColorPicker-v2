@@ -17,6 +17,21 @@
   position: relative
   background-color: #424242
 
+
+// ------------------------------------
+// icon
+// ------------------------------------
+
+[class^="flaticon-"].flaticon-trashAll
+  position: absolute
+  text-align: center
+  width: 100%
+  top: 50%
+  color: MDcolor(orange)
+  margin-left: 0
+  &:before
+    content: "✕"
+
 // -------------------------------------
 //   Modifiers
 // -------------------------------------
@@ -39,20 +54,30 @@
 .picker-colorHex
   display: none
 
+.picker-color--clearAll
+  @extend .picker-color
+  position: relative
+  cursor: pointer
+  border: 1px MDcolor(orange) dashed
+  &:hover
+    border: 1px MDcolor(orange, 600) solid
+    i
+      color: MDcolor(orange, 600)
+
+
+
 // -------------------------------------
 //   Status
 // -------------------------------------
 
 .picker.is-active
-  padding-bottom: 8px
-
   .picker-color
-    margin: 8px 4px 0
+    margin: 4px 4px
 
   .picker-color
     position: relative
-    height: 60px
-    width: 60px
+    height: 62px
+    width: 62px
     border: 2px white solid
 
   .picker-colorHex
@@ -62,6 +87,20 @@
     width: 100%
     text-align: center
     line-height: 1
+    cursor: crosshair
     font-size: $b-fontSize-m
     background-color: white
     padding: 3px 0 0
+
+  .picker-color--clearAll
+    border: 2px MDcolor(orange) dashed
+    .flaticon-trashAll
+      &:before
+        content: "\e003"
+        font-size: $b-fontSize-xl * 1.5
+    &:hover
+      border: 2px MDcolor(orange, 600) solid
+      .flaticon-trashAll
+        &:before
+          content: "\e002"
+          color: MDcolor(orange, 600)

@@ -12,31 +12,70 @@
 ) {
   'use strict';
 
+  // #### 已選顏色色卡 ####
   var PickedColor = React.createClass({
-    clickHandler: function() {
-      var $picker = $('.picker');
+    clickHandler: function(e) {
+      var $picker = $('.picker'),
+          trashMode = ($('.flaticon-trash').hasClass('is-deletable'));
       if ($picker.hasClass('is-active')) {
-        $picker.toggleClass('is-active');
+        e.stopPropagation()
+      } else {
+        $picker.removeClass('is-active');
+      }
+
+      if (trashMode) {
+        var collection = this.props.collection,
+            model = this.props.model;
+      collection.remove(model);
+      e.stopPropagation()
       }
     },
 
-    dbClickHandler: function(e) {
-      if (e.altKey) {
-        console.log('in');
-      }
+    hexClickHandler: function(e) {
+      var tar = $(e.target);
+      tar.select();
+      e.stopPropagation()
     },
 
     render: function() {
       var currentHex = this.props.model.get('hex'),
           currentColor = {background: '#' + currentHex};
       return (
-        <span className="picker-color" style={currentColor} onClick={this.clickHandler} onDoubleClick={this.dbClickHandler}>
-          <span className="picker-colorHex">{currentHex}</span>
+        <span
+          className="picker-color"
+          style={currentColor}
+          onClick={this.clickHandler}>
+          <input
+            className="picker-colorHex"
+            value={currentHex}
+            onClick={this.hexClickHandler}
+            readOnly />
         </span>
       )
     }
   })
 
+
+  // #### 清空所有已選顏色 ####
+  var PickedClear = React.createClass({
+    clearAllClickHandler: function(e) {
+      var props = this.props,
+          pickedCollect = props.pickedCollect;
+      this.props.pickedCollect.reset();
+      e.stopPropagation();
+    },
+
+    render: function() {
+      return (
+        <a className="picker-color--clearAll dn" onClick={this.clearAllClickHandler}>
+          <i className="flaticon-trashAll"></i>
+        </a>
+      )
+    }
+  })
+
+
+  // #### 選色器本體 ####
   var Picker = React.createClass({
     getInitialState: function() {
       return {
@@ -62,10 +101,11 @@
           pickedCollect = props.pickedCollect;
       return (
         <div className="picker-colors">
+          <PickedClear pickedCollect={pickedCollect}/>
           {this.state.colorList.map(function(color) {
             var currentModel = pickedCollect.findWhere({hex: color});
             return (
-              <PickedColor model={currentModel} />
+              <PickedColor model={currentModel} collection={pickedCollect} />
             )
           })}
         </div>
