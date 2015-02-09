@@ -50,6 +50,10 @@
             value={currentHex}
             onClick={this.hexClickHandler}
             readOnly />
+          <div className="picker-color--info">
+            <span>{this.props.model.get('paletteName')}</span>
+            <span>{this.props.model.get('tone')}</span>
+          </div>
         </span>
       )
     }

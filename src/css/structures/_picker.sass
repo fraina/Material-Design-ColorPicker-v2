@@ -23,14 +23,15 @@
 // ------------------------------------
 
 [class^="flaticon-"].flaticon-trashAll
-  position: absolute
-  text-align: center
-  width: 100%
-  top: 50%
   color: MDcolor(orange)
-  margin-left: 0
+  display: block
+  margin: 0
   &:before
     content: "✕"
+    position: absolute
+    text-align: center
+    width: 100%
+    top: 50%
 
 // -------------------------------------
 //   Modifiers
@@ -54,9 +55,11 @@
 .picker-colorHex
   display: none
 
+.picker-color--info
+  display: none
+
 .picker-color--clearAll
   @extend .picker-color
-  position: relative
   cursor: pointer
   border: 1px MDcolor(orange) dashed
   &:hover
@@ -72,10 +75,8 @@
 
 .picker.is-active
   .picker-color
-    margin: 4px 4px
-
-  .picker-color
     position: relative
+    margin: 4px 4px
     height: 62px
     width: 62px
     border: 2px white solid
@@ -104,3 +105,27 @@
         &:before
           content: "\e002"
           color: MDcolor(orange, 600)
+
+  .picker-colors.show-info
+    [class^="flaticon-"].flaticon-trashAll
+      display: inline-block
+
+    .picker-color--clearAll
+      display: table
+      float: left
+      &.dn
+        display: none
+
+    .picker-color
+      width: 100px
+
+    .picker-color--info
+      color: MDcolor(grey, 50)
+      text-shadow: 0 -1px 1px rgba(black, .6)
+      padding: 2px 3px
+      display: block
+      span
+        line-height: 1.1
+        display: block
+        font-size: $b-fontSize-s
+
