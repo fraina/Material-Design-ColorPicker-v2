@@ -1,12 +1,11 @@
 define [
   'backbone'
-  'underscore'
-], (Backbone, _) ->
+], (Backbone) ->
   'use strict'
 
   Palette = Backbone.Model.extend
 
-    defaults:
-      "picked": false
+    initialize: ->
+
 
   return Palette

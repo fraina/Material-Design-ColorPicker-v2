@@ -1,13 +1,11 @@
 define [
   'backbone'
-  'underscore'
-], (Backbone, _) ->
+], (Backbone) ->
   'use strict'
 
   Picked = Backbone.Model.extend
 
     initialize: ->
-      console.log(@attributes)
 
 
   return Picked

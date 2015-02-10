@@ -24,10 +24,13 @@
       }
 
       if (trashMode) {
-        var collection = this.props.collection,
-            model = this.props.model;
-      collection.remove(model);
-      e.stopPropagation()
+        var props = this.props,
+            pickedCollect = props.pickedCollect,
+            model = props.model,
+            targetDom = model.get('targetDom');
+        targetDom.removeClass('is-selected');
+        pickedCollect.remove(model);
+        e.stopPropagation()
       }
     },
 
@@ -65,6 +68,10 @@
     clearAllClickHandler: function(e) {
       var props = this.props,
           pickedCollect = props.pickedCollect;
+      pickedCollect.each(function(model) {
+        var targetDom = model.get('targetDom');
+        targetDom.removeClass('is-selected');
+      })
       this.props.pickedCollect.reset();
       e.stopPropagation();
     },
@@ -109,7 +116,9 @@
           {this.state.colorList.map(function(color) {
             var currentModel = pickedCollect.findWhere({hex: color});
             return (
-              <PickedColor model={currentModel} collection={pickedCollect} />
+              <PickedColor
+                model={currentModel}
+                pickedCollect={pickedCollect} />
             )
           })}
         </div>

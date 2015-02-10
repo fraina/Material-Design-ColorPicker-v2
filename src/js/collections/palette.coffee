@@ -1,8 +1,7 @@
 define [
   'backbone'
-  'underscore'
   'models/tone'
-], (Backbone, _, Model) ->
+], (Backbone, Model) ->
   'use strict'
 
   Palette = Backbone.Collection.extend
@@ -11,6 +10,6 @@ define [
     url: 'js/data.json'
 
     initialize: ->
-      console.log('[collection] Palette')
+
 
   return Palette

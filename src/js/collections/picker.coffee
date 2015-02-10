@@ -1,8 +1,7 @@
 define [
   'backbone'
-  'underscore'
-  'models/tone'
-], (Backbone, _, Model) ->
+  'models/picked'
+], (Backbone, Model) ->
   'use strict'
 
   Picker = Backbone.Collection.extend
@@ -10,6 +9,6 @@ define [
     model: Model
 
     initialize: ->
-      console.log('[collection] Picker')
+
 
   return Picker

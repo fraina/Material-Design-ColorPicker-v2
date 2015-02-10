@@ -14,29 +14,30 @@
 
   // #### 子元件：色卡 ####
   var Tone = React.createClass({
+
     clickHandler: function(e) {
       var props = this.props,
           model = props.model,
-          collection = props.pickedCollect,
+          pickedCollect = props.pickedCollect,
           palette = model.paletteName,
           tone = props.list,
           $filter = $('.flaticon-filter'),
           $target = $(e.target);
 
       function pickedCollectAdd() {
-        props.pickedCollect.add({
+        pickedCollect.add({
           'hex': tone.hex,
           'paletteName': palette,
-          'tone': tone.tone
+          'tone': tone.tone,
+          'targetDom': $target
         })
-        model.picked = true;
-        $target.addClass('is-selected')
+        $target.addClass('is-selected');
       }
 
       if (! $filter.hasClass('is-filtering')){
         pickedCollectAdd()
       } else {
-        if (! props.pickedCollect.findWhere({hex: tone.hex})) {
+        if (! pickedCollect.findWhere({hex: tone.hex})) {
           pickedCollectAdd()
         }
       }
