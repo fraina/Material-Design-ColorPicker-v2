@@ -1,7 +1,7 @@
 Material-Design-ColorPicker v2
 ===========================
 
-A Material Design Color Picker v2
+A Material Design Color Picker
 
 ## Thanks ##
 感謝那些給予我建議與幫助的人們。
