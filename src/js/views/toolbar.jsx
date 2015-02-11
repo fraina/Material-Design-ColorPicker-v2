@@ -26,17 +26,6 @@
     }
   })
 
-  var ToolBarRepeatable = React.createClass({
-    clickHandler: function() {
-      var $locker = $('.icon-repeat')
-      $locker.toggleClass('is-repeatable');
-    },
-
-    render: function() {
-      return (<i className="icon-repeat" onClick={this.clickHandler}></i>)
-    }
-  })
-
   var ToolBarTrash = React.createClass({
     clickHandler: function(e) {
       var $tar = $(e.target),
@@ -47,6 +36,43 @@
 
     render: function() {
       return (<i className="icon-trash" onClick={this.clickHandler}></i>)
+    }
+  })
+
+  var ToolBarRepeatable = React.createClass({
+    getInitialState: function() {
+      return {
+        isRepeatable: false
+      };
+    },
+
+    clickHandler: function() {
+      var $repeat = $('.icon-repeat'),
+          $repeatTip = $('.toolbar-tip');
+      $repeat.toggleClass('is-repeatable');
+      $repeatTip.toggleClass('is-repeatable');
+      this.setState({isRepeatable: !this.state.isRepeatable});
+    },
+
+    render: function() {
+      var isRepeatable = this.state.isRepeatable;
+      return (
+        <i className="icon-repeat" onClick={this.clickHandler}>
+          <ToolBarRepeatableTip isRepeatable={isRepeatable}/>
+        </i>
+      )
+    }
+  })
+
+  var ToolBarRepeatableTip = React.createClass({
+    render: function() {
+      var content = '';
+      if (this.props.isRepeatable) {
+        content = 'Repeatable';
+      } else {
+        content = 'Unrepeatable';
+      }
+      return (<span className="toolbar-tip">{content}</span>)
     }
   })
 
