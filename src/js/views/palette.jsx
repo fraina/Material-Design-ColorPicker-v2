@@ -21,24 +21,26 @@
           pickedCollect = props.pickedCollect,
           palette = model.paletteName,
           tone = props.list,
-          $filter = $('.flaticon-filter'),
+          $repeat = $('.icon-repeat'),
           $target = $(e.target);
 
-      function pickedCollectAdd() {
-        pickedCollect.add({
-          'hex': tone.hex,
-          'paletteName': palette,
-          'tone': tone.tone,
-          'targetDom': $target
-        })
-        $target.addClass('is-selected');
-      }
+        function pickedCollectAdd() {
+          pickedCollect.add({
+            'hex': tone.hex,
+            'paletteName': palette,
+            'tone': tone.tone,
+            'targetDom': $target
+          })
+          $target.addClass('is-selected');
+        }
 
-      if (! $filter.hasClass('is-filtering')){
-        pickedCollectAdd()
-      } else {
-        if (! pickedCollect.findWhere({hex: tone.hex})) {
+      if (this.props.status) {
+        if ($repeat.hasClass('is-repeatable')){
           pickedCollectAdd()
+        } else {
+          if (! pickedCollect.findWhere({hex: tone.hex})) {
+            pickedCollectAdd()
+          }
         }
       }
     },

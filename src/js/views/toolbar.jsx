@@ -15,25 +15,25 @@
 
   var ToolBarInfo = React.createClass({
     clickHandler: function() {
-      var $info = $('.flaticon-list'),
+      var $info = $('.icon-list'),
           $picker_colors = $('.picker').find('.picker-colors');
       $info.toggleClass('is-showInfo');
       $picker_colors.toggleClass('show-info');
     },
 
     render: function() {
-      return (<i className="flaticon-list" onClick={this.clickHandler}></i>)
+      return (<i className="icon-list" onClick={this.clickHandler}></i>)
     }
   })
 
-  var ToolBarFilter = React.createClass({
+  var ToolBarRepeatable = React.createClass({
     clickHandler: function() {
-      var $locker = $('.flaticon-filter')
-      $locker.toggleClass('is-filtering');
+      var $locker = $('.icon-repeat')
+      $locker.toggleClass('is-repeatable');
     },
 
     render: function() {
-      return (<i className="flaticon-filter is-filtering" onClick={this.clickHandler}></i>)
+      return (<i className="icon-repeat" onClick={this.clickHandler}></i>)
     }
   })
 
@@ -46,7 +46,7 @@
     },
 
     render: function() {
-      return (<i className="flaticon-trash" onClick={this.clickHandler}></i>)
+      return (<i className="icon-trash" onClick={this.clickHandler}></i>)
     }
   })
 
@@ -66,10 +66,10 @@
 
       return (
         <div className="toolbar" onClick={this.clickHandler}>
-          <i className="flaticon-note"></i>
+          <i className="icon-note"></i>
           <ToolBarInfo />
           <ToolBarTrash pickedCollect={pickedCollect}/>
-          <ToolBarFilter />
+          <ToolBarRepeatable />
           <ul className="ghbtns">
             <li><iframe src="http://ghbtns.com/github-btn.html?user=Fraina&repo=Material-Design-ColorPicker-v2&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe></li>
             <li><iframe src="http://ghbtns.com/github-btn.html?user=Fraina&repo=Material-Design-ColorPicker-v2&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe></li>

@@ -16,7 +16,7 @@
   var PickedColor = React.createClass({
     clickHandler: function(e) {
       var $picker = $('.picker'),
-          trashMode = ($('.flaticon-trash').hasClass('is-deletable'));
+          trashMode = ($('.icon-trash').hasClass('is-deletable'));
       if ($picker.hasClass('is-active')) {
         e.stopPropagation()
       } else {
@@ -79,7 +79,7 @@
     render: function() {
       return (
         <a className="picker-color--clearAll dn" onClick={this.clearAllClickHandler}>
-          <i className="flaticon-trashAll"></i>
+          <i className="icon-trashAll"></i>
         </a>
       )
     }

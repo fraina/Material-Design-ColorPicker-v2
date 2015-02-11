@@ -8,23 +8,24 @@
 	font-weight: normal;
 	font-style: normal;
 }
-[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
-[class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+[class^="icon-"]:before, [class*=" icon-"]:before,
+[class^="icon-"]:after, [class*=" icon-"]:after {
 	font-family: Flaticon;
         font-size: 20px;
-font-style: normal;
-}.flaticon-filter:before {
-	font-size: 17px;
+        font-style: normal;
+}
+.icon-repeat:before {
+	font-size: 18px;
 	content: "\e000";
 }
-.flaticon-list:before {
+.icon-list:before {
 	content: "\e001";
 }
-.flaticon-trashAll:before {
+.icon-trashAll:before {
 	margin: 0;
 	font-size: 100%;
 	content: "\e002";
 }
-.flaticon-trash:before {
+.icon-trash:before {
 	content: "\e003";
 }
