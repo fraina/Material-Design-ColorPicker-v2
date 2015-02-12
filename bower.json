@@ -4,10 +4,9 @@
   "dependencies": {
     "jquery": "1.11.2",
     "backbone": "1.1.2",
-    "requirejs": "2.1.15",
-    "requirejs-text": "2.0.12",
+    "requirejs": "2.1.16",
+    "requirejs-text": "2.0.13",
     "requirejs-i18n": "2.0.4",
-    "lodash": "~3.0.0",
     "jquery-backstretch": "~2.0.4",
     "outdated-browser": "~1.1.0",
     "react": "~0.12.2",
@@ -20,7 +19,7 @@
   "devDependencies": {
     "mockjs": "~0.1.6",
     "mocha": "~2.1.0",
-    "chai": "~1.10.0"
+    "chai": "~2.0.0"
   },
   "resolutions": {
     "jquery": "1.11.2"
@@ -42,12 +41,6 @@
         ".*",
         "*.json",
         "index.js"
-      ]
-    },
-    "lodash": {
-      "ignore": [
-        "*.json",
-        "*.txt"
       ]
     },
     "requirejs": {

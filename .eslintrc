@@ -26,5 +26,6 @@ rules:
   space-after-keywords: [1, always]
   space-before-blocks: [1, always]
   space-in-brackets: [2, never]
+  space-unary-ops: [1, {nonwords: true}]
   max-len: [1, 120, 2]
   max-depth: [1, 4]
