@@ -29,7 +29,7 @@
     mixins: [BRMixin],
 
     clickHandler: function() {
-      var $picker = $('.picker');
+      var $picker = $(this.getDOMNode()).find('.picker');
       $picker.toggleClass('is-active');
     },
 
@@ -48,7 +48,7 @@
           })}
           <li className='picker' onClick={this.clickHandler}>
             <ToolBar pickedCollect={pickedCollect}/>
-            <Picker pickedCollect={pickedCollect}/>
+            <Picker pickedCollect={pickedCollect} />
           </li>
         </ul>
       );

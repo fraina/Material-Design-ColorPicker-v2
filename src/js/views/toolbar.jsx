@@ -13,11 +13,11 @@
   'use strict';
 
 
+  // #### 切換是否顯示色卡詳細資訊 ####
   var ToolBarInfo = React.createClass({
     clickHandler: function() {
-      var $info = $('.icon-list'),
-          $picker_colors = $('.picker').find('.picker-colors');
-      $info.toggleClass('is-showInfo');
+      var $picker_colors = $('.picker').find('.picker-colors');
+      $(this.getDOMNode()).toggleClass('is-showInfo');
       $picker_colors.toggleClass('show-info');
     },
 
@@ -26,11 +26,12 @@
     }
   })
 
+
+  // #### 切換已選色卡是否可刪除 ####
   var ToolBarTrash = React.createClass({
-    clickHandler: function(e) {
-      var $tar = $(e.target),
-          $clearAll = $('.picker-color--clearAll');
-      $tar.toggleClass('is-deletable');
+    clickHandler: function() {
+      var $clearAll = $('.picker-color--clearAll');
+      $(this.getDOMNode()).toggleClass('is-deletable');
       $clearAll.toggleClass('dn');
     },
 
@@ -39,6 +40,8 @@
     }
   })
 
+
+  // #### 切換同樣色卡是否可重複選取 ####
   var ToolBarRepeatable = React.createClass({
     getInitialState: function() {
       return {
@@ -47,10 +50,7 @@
     },
 
     clickHandler: function() {
-      var $repeat = $('.icon-repeat'),
-          $repeatTip = $('.toolbar-tip');
-      $repeat.toggleClass('is-repeatable');
-      $repeatTip.toggleClass('is-repeatable');
+      $(this.getDOMNode()).toggleClass('is-repeatable');
       this.setState({isRepeatable: !this.state.isRepeatable});
     },
 
@@ -64,6 +64,8 @@
     }
   })
 
+
+  // #### 色卡是否可重複選取提示文字 ####
   var ToolBarRepeatableTip = React.createClass({
     render: function() {
       var content = '';
@@ -76,14 +78,25 @@
     }
   })
 
+
+  // #### Github btn ####
+  var ToolBarGitHubBtn = React.createClass({
+    render: function() {
+      var repository = 'http://ghbtns.com/github-btn.html?user=Fraina&repo=Material-Design-ColorPicker-v2';
+      return (
+        <ul className="ghbtns">
+          <li><iframe src={repository + "&type=watch&count=true"} allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe></li>
+          <li><iframe src={repository + "&type=fork&count=true"} allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe></li>
+        </ul>
+      )
+    }
+  })
+
+
+  // #### 工具列 ####
   var ToolBar = React.createClass({
-    clickHandler: function() {
-      var $picker = $('.picker');
-      if (! $picker.hasClass('is-active')) {
-        $picker.attr('class', 'picker is-active');
-      } else {
-        $picker.removeClass('is-active');
-      }
+    clickHandler: function(e) {
+      e.stopPropagation();
     },
 
     render: function() {
@@ -96,10 +109,7 @@
           <ToolBarInfo />
           <ToolBarTrash pickedCollect={pickedCollect}/>
           <ToolBarRepeatable />
-          <ul className="ghbtns">
-            <li><iframe src="http://ghbtns.com/github-btn.html?user=Fraina&repo=Material-Design-ColorPicker-v2&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe></li>
-            <li><iframe src="http://ghbtns.com/github-btn.html?user=Fraina&repo=Material-Design-ColorPicker-v2&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe></li>
-          </ul>
+          <ToolBarGitHubBtn />
         </div>
       )
     }

@@ -12,7 +12,7 @@
 ) {
   'use strict';
 
-  // #### 子元件：色卡 ####
+  // #### 色卡 ####
   var Tone = React.createClass({
 
     clickHandler: function(e) {
@@ -22,16 +22,16 @@
           palette = model.paletteName,
           tone = props.list,
           $repeat = $('.icon-repeat'),
-          $target = $(e.target);
+          $tar = $(this.getDOMNode());
 
         function pickedCollectAdd() {
           pickedCollect.add({
             'hex': tone.hex,
             'paletteName': palette,
             'tone': tone.tone,
-            'targetDom': $target
+            'targetDom': $tar
           })
-          $target.addClass('is-selected');
+          $tar.addClass('is-selected');
         }
 
       if (this.props.status) {
@@ -73,8 +73,7 @@
     },
 
     hoverHandler: function(e) {
-      var show = !this.state.isShow;
-      this.setState({ isShow: show });
+      this.setState({ isShow: !this.state.isShow });
     },
 
     render: function() {

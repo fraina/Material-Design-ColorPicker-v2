@@ -35,7 +35,7 @@
     },
 
     hexClickHandler: function(e) {
-      var tar = $(e.target);
+      var tar = $(this.getDOMNode()).find('.picker-colorHex');
       tar.select();
       e.stopPropagation()
     },
@@ -86,7 +86,7 @@
   })
 
 
-  // #### 選色器本體 ####
+  // #### 選色器 ####
   var Picker = React.createClass({
     getInitialState: function() {
       return {
