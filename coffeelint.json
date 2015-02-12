@@ -17,13 +17,16 @@
     },
     "cyclomatic_complexity": {
         "value": 10,
-        "level": "ignore"
+        "level": "warn"
     },
     "duplicate_key": {
         "level": "error"
     },
     "empty_constructor_needs_parens": {
         "level": "ignore"
+    },
+    "ensure_comprehensions": {
+        "level": "warn"
     },
     "indentation": {
         "value": 2,
@@ -55,7 +58,7 @@
         "level": "ignore"
     },
     "no_empty_param_list": {
-        "level": "ignore"
+        "level": "warn"
     },
     "no_implicit_braces": {
         "level": "ignore",
@@ -103,5 +106,8 @@
     },
     "space_operators": {
         "level": "ignore"
+    },
+    "spacing_after_comma": {
+        "level": "error"
     }
 }
