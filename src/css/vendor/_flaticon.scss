@@ -14,9 +14,12 @@
         font-size: 20px;
         font-style: normal;
 }
-.icon-repeat:before {
-	font-size: 18px;
-	content: "\e000";
+.icon-repeat {
+	color: MDcolor(grey, 300);
+	&:before {
+		font-size: 18px;
+		content: "\e000";
+	}
 }
 .icon-list:before {
 	content: "\e001";
