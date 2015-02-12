@@ -1,0 +1,28 @@
+{
+  "name": "Mock.js",
+  "version": "0.1.6",
+  "homepage": "https://github.com/nuysoft/MockService",
+  "authors": [
+    "nuysoft <nuysoft@gmail.com>"
+  ],
+  "main": [
+    "dist/mock.js"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "~2.1.1",
+    "bootstrap": "",
+    "codemirror": "~3.20.0",
+    "highlightjs": "~8.0.0",
+    "kissy": "~1.4.3",
+    "seajs": "*",
+    "js-beautify": "~1.5.1"
+  }
+}
